@@ -638,7 +638,7 @@ elif mode == "Generate flashcards":
     number_cards = st.number_input(
         "How many flashcards?",
         min_value=1,
-        max_value=50,
+        max_value=15,
         value=10,
         step=1
     )
