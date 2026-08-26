@@ -2,15 +2,11 @@ import streamlit as st
 from openai import OpenAI
 import PyPDF2
 import io
-import os
 import re
 import time
-from dotenv import load_dotenv
 import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
-
-load_dotenv()
 
 st.set_page_config(page_title="AI Study Assistant", page_icon="📃", layout="centered")
 
@@ -27,7 +23,7 @@ def load_embedding_model():
 
 embedding_model = load_embedding_model()
 
-API_KEY = os.getenv("API_KEY")
+API_KEY = st.secrets["API_KEY"]
 
 client = OpenAI(
     api_key=API_KEY,
